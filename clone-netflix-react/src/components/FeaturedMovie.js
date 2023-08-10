@@ -2,7 +2,6 @@ import React from "react";
 import './FeaturedMovie.css';
 
 const FeaturedMovie = ({item}) =>{
-    console.log(item);
     const firstDate = new Date(item.first_air_date);
     return (
         <section className="featured" style={{
@@ -20,8 +19,8 @@ const FeaturedMovie = ({item}) =>{
                         <div className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons > 1 ? 's' : ''}</div>
                         <div className="featured--description">{item.overview}</div>
                         <div className="featured--buttons">
-                            <a href="#" className="featured--watchButton">⏵ Assistir</a>
-                            <a href="#" className="featured--myListButton">+ Minha Lista</a>
+                            <a href="https://google.com" className="featured--watchButton">⏵ Assistir</a>    
+                            <a href="http://google.com" className="featured--myListButton">+ Minha Lista</a>
                         </div>
                         <div className="featured--genres"><strong>Gêneros:</strong> {item.genres.map((now)=>now.name).join(', ')}</div>
                     </div>
