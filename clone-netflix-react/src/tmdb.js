@@ -20,8 +20,8 @@ const basicFetch = async (endPoint) => {
     return json;
 }
 
-const getRandomArbitrary = (min, max) => {
-    return Number.parseInt(Math.random() * (max - min) + min);
+const getRandomArbitrary = (min, max, random = Math.random()) => {
+    return Number.parseInt(random * (max - min) + min);
 }
 
 const getBrend = async (movies) => {
