@@ -13,8 +13,9 @@ div.movieRow--listarea{
 }
 
 div.movieRow--list{
-    width: 100000px;
+    transition: all ease 0.5s;
 }
+
 
 div.movieRow--item{
     display: inline-block;
@@ -33,3 +34,40 @@ div.movieRow--item img:hover{
     transform: scale(1);
 }
 
+div.movieRow--left, div.movieRow--right{
+    position: absolute;
+    z-index: 99;
+    width: 40px;
+    height: 225px;
+    background-color: red;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.2s;
+
+
+}
+
+div.movieRow--left{
+    left: 0;
+}
+
+div.movieRow--right{
+    right: 0;
+}
+
+div.movieRow:hover div.movieRow--left, div.movieRow:hover div.movieRow--right {
+    opacity: 0.6 !important;
+}
+
+
+@media Screen and (max-width: 760px){
+    div.movieRow--left, div.movieRow--right{
+        opacity: 1 !important;
+    }
+}
