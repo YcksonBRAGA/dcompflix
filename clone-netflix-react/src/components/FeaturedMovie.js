@@ -1,28 +1,33 @@
 import React from "react";
 import './FeaturedMovie.css';
 
-const FeaturedMovie = ({item}) =>{
-    const firstDate = new Date(item.first_air_date);
+const FeaturedMovie = ({item, setShowMovie}) =>{
+    const show  = () =>{
+        setShowMovie(true);
+
+
+    }
+
     return (
         <section className="featured" style={{
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
+            backgroundImage: `url(https://i.imgur.com/Pxmitul.png)`
         }}>
 
             <div className="featured--vertical">
                 <div className="featured--horizontal">
-                    <div className="featured--name">{item.name}</div>
+                    <div className="featured--name">Computação em Núvem</div>
                     <div className="featured--info">
                         <div className="featured--points">{item.vote_average} pontos</div>
-                        <div className="featured--year">{firstDate.getFullYear()}</div>
-                        <div className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons > 1 ? 's' : ''}</div>
-                        <div className="featured--description">{item.overview}</div>
+                        <div className="featured--year">{2023}</div>
+                        <div className="featured--seasons">1 temporada</div>
+                        <div className="featured--description">Neste episódio empolgante do documentário, o Grupo 3 explora o mundo da computação em nuvem, revelando sua evolução desde os primórdios até sua crescente relevância nos dias de hoje. Com histórias de sucesso de empresas brasileiras, análises das principais plataformas como Amazon Web Services, Google Cloud e Microsoft Azure, e...</div>
                         <div className="featured--buttons">
-                            <a href="https://google.com" className="featured--watchButton">⏵ Assistir</a>    
-                            <a href="http://google.com" className="featured--myListButton">+ Minha Lista</a>
+                            <a href="#1" className="featured--watchButton" id="playButton" onClick={show}>⏵ Assistir</a>    
+                            <a href="#1" className="featured--myListButton">+ Minha Lista</a>
                         </div>
-                        <div className="featured--genres"><strong>Gêneros:</strong> {item.genres.map((now)=>now.name).join(', ')}</div>
+                        <div className="featured--genres"><strong>Gêneros:</strong> Documentário</div>
                     </div>
                 </div>
             </div>

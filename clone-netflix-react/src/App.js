@@ -4,6 +4,7 @@ import tmdb from './tmdb';
 import MovieRow from "./components/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie";
 import Header from "./components/Header";
+import Video from "./components/Video";
 import './App.css';
 
 
@@ -14,6 +15,9 @@ const App = () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
+
 
  useEffect(()=>{
     const loadAll = async () => {
@@ -47,13 +51,14 @@ const App = () => {
     }
   } ,[]);
 
+
   return (
   <div className="page">
+      <Video showVideo={showVideo} />
+      <Header black={blackHeader} />
 
-      <Header black={blackHeader}/>
 
-
-      {featuredData && <FeaturedMovie item={featuredData}/>}
+      {featuredData && <FeaturedMovie item={featuredData} setShowMovie={setShowVideo}/>}
       
       <section className="lists">
         {movieList.map((item, key)=>{
