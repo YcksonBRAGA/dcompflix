@@ -17,7 +17,7 @@ const FeaturedMovie = ({item, setShowMovie}) =>{
 
             <div className="featured--vertical">
                 <div className="featured--horizontal">
-                    <div className="featured--name">Computação em Núvem</div>
+                    <div className="featured--name">Computação em Nuvem</div>
                     <div className="featured--info">
                         <div className="featured--points">{item.vote_average} pontos</div>
                         <div className="featured--year">{2023}</div>
